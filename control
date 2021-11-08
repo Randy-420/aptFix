@@ -7,7 +7,7 @@ Description: Sometimes, your package manager will kick back an error like "DPKG 
  Clear these errors with one simple terminal command. 
  Run'aptFix' in terminal or press the conveniently placed button in the preference bundle!
 Depiction: https://Randy-420.GitHub.io/depic/aptFix.html
-Replaces: com.randy420.fixCydia
+Replaces: com.randy420.fixcydia
 Maintainer: Randy420
 Author: Randy420
 Section: Utilities
