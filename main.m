@@ -28,6 +28,6 @@ int main(int argc, char *argv[]) {
 	}
 
 	[fix RunCMD:runCode WaitUntilExit:YES];
-	printf("Done ( ͡° ͜ʖ ͡°)\nPackage Managers should now work!");
+	printf("Done ( ͡° ͜ʖ ͡°)\nPackage Managers should now work!\n");
 	return 0;
 }
