@@ -1,6 +1,27 @@
 #import <UIKit/UIKit.h>
 #include "420.h"
 
+static NSString *local(NSString *local, NSString *def){
+	NSString *path = @"/Library/Application Support/aptFix";
+	NSString *tPath;
+	NSArray *languages = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:nil];
+	NSArray *preferredLanguages = [NSLocale preferredLanguages];
+
+	for (NSString *preferredLanguage in preferredLanguages){
+		for (NSString *language in languages){
+			if ([preferredLanguage hasPrefix:[language stringByReplacingOccurrencesOfString:@".lproj" withString:@""]]){
+				tPath = [path stringByAppendingPathComponent:language];
+				if ([[NSFileManager defaultManager] fileExistsAtPath:tPath]){
+					path = tPath;
+					return [[NSBundle bundleWithPath:path] localizedStringForKey:local value:def table:@"aptFix"];
+				}
+			}
+		}
+	}
+
+	return [[NSBundle bundleWithPath:path] localizedStringForKey:local value:def table:@"aptFix"];
+}
+
 id CC(NSString *CMD) {
 	return [NSString stringWithFormat:@"echo \"%@\" | gap",CMD];
 }
@@ -20,7 +41,7 @@ int main(int argc, char *argv[]) {
 			runCode = [runCode stringByReplacingOccurrencesOfString:@"a >/dev/null 2>&1" withString:@"a"];
 			runCode = CC(runCode);
 		}else{
-			printf("\n\nPLEASE RUN AS ROOT USER \n\n");
+			printf("\n\n%s\n\n", local(@"RUN_ROOT", @"Package Managers should now work").UTF8String);
 			exit(1);
 		}
 	} else {
@@ -28,6 +49,6 @@ int main(int argc, char *argv[]) {
 	}
 
 	[fix RunCMD:runCode WaitUntilExit:YES];
-	printf("Done ( ͡° ͜ʖ ͡°)\nPackage Managers should now work!\n");
+	printf("%s ( ͡° ͜ʖ ͡°)\n%s!\n", local(@"DONE", @"Done").UTF8string, local(@"FINISH", @"Package Managers should now work").UTF8String);
 	return 0;
 }
