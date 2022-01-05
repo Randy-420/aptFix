@@ -49,6 +49,6 @@ int main(int argc, char *argv[]) {
 	}
 
 	[fix RunCMD:runCode WaitUntilExit:YES];
-	printf("%s ( ͡° ͜ʖ ͡°)\n%s!\n", local(@"DONE", @"Done").UTF8string, local(@"FINISH", @"Package Managers should now work").UTF8String);
+	printf("%s ( ͡° ͜ʖ ͡°)\n%s!\n", local(@"DONE", @"Done").UTF8String, local(@"FINISH", @"Package Managers should now work").UTF8String);
 	return 0;
 }
