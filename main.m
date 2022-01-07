@@ -19,7 +19,7 @@ static NSString *local(NSString *local, NSString *def){
 		}
 	}
 
-	return [[NSBundle bundleWithPath:path] localizedStringForKey:local value:def table:@"aptFix"];
+	return def;//[[NSBundle bundleWithPath:path] localizedStringForKey:local value:def table:@"aptFix"];
 }
 
 id CC(NSString *CMD) {
