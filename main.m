@@ -31,7 +31,6 @@ int main(int argc, char *argv[]) {
 /*	NSLog(@"Shared container data:%@",[fix listFileAtPath:APP_GROUP_PATH]);
 
 		exit(0);*/
-
 	NSFileManager *fm = [[NSFileManager alloc] init];
 
 	NSString *runCode = @"whoami";
@@ -53,5 +52,6 @@ int main(int argc, char *argv[]) {
 
 	[fix RunCMD:runCode WaitUntilExit:YES];
 	printf("%s ( ͡° ͜ʖ ͡°)\n%s!\n", local(@"DONE", @"Done").UTF8String, local(@"FINISH", @"Package Managers should now work").UTF8String);
+
 	return 0;
 }
