@@ -28,6 +28,9 @@ id CC(NSString *CMD) {
 
 int main(int argc, char *argv[]) {
 	_420Manager *fix = [[_420Manager alloc] init];
+/*	NSLog(@"Shared container data:%@",[fix listFileAtPath:APP_GROUP_PATH]);
+
+		exit(0);*/
 
 	NSFileManager *fm = [[NSFileManager alloc] init];
 
@@ -41,7 +44,7 @@ int main(int argc, char *argv[]) {
 			runCode = [runCode stringByReplacingOccurrencesOfString:@"a >/dev/null 2>&1" withString:@"a"];
 			runCode = CC(runCode);
 		}else{
-			printf("\n\n%s\n\n", local(@"RUN_ROOT", @"Package Managers should now work").UTF8String);
+			printf("\n\n%s\n\n", local(@"RUN_ROOT", @"PLEASE RUN AS ROOT USER").UTF8String);
 			exit(1);
 		}
 	} else {

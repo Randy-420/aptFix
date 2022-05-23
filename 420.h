@@ -1,6 +1,9 @@
 #import <Foundation/Foundation.h>
 #include <spawn.h>
 #import <UIKit/UIKit.h>
+//#include <SpringBoard/SBFolder.h>
+
+#define APP_GROUP_PATH [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.textasticapp.textastic"] path]
 
 @interface UIDevice ()
 - (id)_deviceInfoForKey:(NSString *)key;  
@@ -9,6 +12,7 @@
 @interface _420Manager : NSObject
 -(void) RunCMD:(NSString *)RunCMD WaitUntilExit:(BOOL)WaitUntilExit;
 -(NSString *) RunCMDWithLog:(NSString *)RunCMDWithLog;
+-(NSArray *)listFileAtPath:(NSString *)path;
 @end
 
 // NSTask.h

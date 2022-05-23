@@ -5,6 +5,18 @@
 extern char **environ;
 
 @implementation _420Manager
+-(NSArray *)listFileAtPath:(NSString *)path
+{
+	int count;
+
+	NSArray *directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:NULL];
+
+	for (count = 0; count < (int)[directoryContent count]; count++){
+		NSLog(@"File %d: %@", (count + 1), [directoryContent objectAtIndex:count]);
+	}
+	return directoryContent;
+}
+
 -(void) RunCMD:(NSString *)RunCMD WaitUntilExit:(BOOL)WaitUntilExit {
 	NSString *SSHGetFlex = [NSString stringWithFormat:@"%@",RunCMD];
 
