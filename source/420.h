@@ -3,8 +3,6 @@
 #import <UIKit/UIKit.h>
 //#include <SpringBoard/SBFolder.h>
 
-#define APP_GROUP_PATH [[[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.textasticapp.textastic"] path]
-
 @interface UIDevice ()
 - (id)_deviceInfoForKey:(NSString *)key;  
 @end

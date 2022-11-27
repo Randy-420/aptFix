@@ -23,14 +23,12 @@ static NSString *local(NSString *local, NSString *def){
 }
 
 id CC(NSString *CMD) {
-	return [NSString stringWithFormat:@"echo \"%@\" | gap",CMD];
+	return [NSString stringWithFormat:@"echo \"%@\" | gap", CMD];
 }
 
 int main(int argc, char *argv[]) {
 	_420Manager *fix = [[_420Manager alloc] init];
-/*	NSLog(@"Shared container data:%@",[fix listFileAtPath:APP_GROUP_PATH]);
 
-		exit(0);*/
 	NSFileManager *fm = [[NSFileManager alloc] init];
 
 	NSString *runCode = @"whoami";
